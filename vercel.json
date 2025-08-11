@@ -1,0 +1,19 @@
+{
+    "builds": [
+        {
+            "src": "fin_expert_solution/wsgi.py",
+            "use": "@vercel/python",
+            "config": {
+                "maxDuration": 300,
+                "maxMemory": 512,
+                "runtime": "python3.10"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "fin_expert_solution/wsgi.py"
+        }
+    ]
+}
