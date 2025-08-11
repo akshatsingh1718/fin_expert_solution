@@ -1,12 +1,19 @@
 {
+    "version": 2,
     "builds": [
         {
             "src": "fin_expert_solution/wsgi.py",
             "use": "@vercel/python",
             "config": {
-                "maxDuration": 300,
-                "maxMemory": 512,
+                "maxLambdaSize": "15mb",
                 "runtime": "python3.10"
+            }
+        },
+        {
+            "src": "build_files.sh",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "staticfiles"
             }
         }
     ],
@@ -15,5 +22,6 @@
             "src": "/(.*)",
             "dest": "fin_expert_solution/wsgi.py"
         }
-    ]
+    ],
+    "outputDirectory": "staticfiles"
 }
