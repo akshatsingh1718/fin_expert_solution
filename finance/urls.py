@@ -12,4 +12,6 @@ urlpatterns = [
     path('team/', views.team, name='team'),
     path('testimonial/', views.testimonial, name='testimonial'),
     path('project/', views.project, name='project'),
+    # Dynamic service pages - handles all services with single URL pattern
+    path('<str:service_name>/', views.service_detail, name='service_detail'),
 ]

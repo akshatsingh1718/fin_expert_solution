@@ -1,0 +1,60 @@
+{% extends 'finance/base.html' %}
+{% load static %}
+{% block title %}Business Loan{% endblock %}
+
+{% block page_header %}
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container">
+        <h1 class="display-3 mb-4 animated slideInDown">Business Loan</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'finance:index' %}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'finance:service' %}">Services</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Business Loan</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+{% endblock %}
+
+{% block content %}
+<!-- Feature Start -->
+<div class="container-xxl">
+    <div class="container">
+        <div class="wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="display-5">Overview</h1>
+            <p>It is an unsecured business loan taken by an Individual, Proprietary, Partnership & LLP firms or entity from a bank or a non-banking financial company (NBFC) on the basis of his business income and banking to meet their business financial needs. The {{ COMPANY_NAME }} is one of the leading channel partners with Banks and NBFC and can help you avail unsecured business loans. We help you procure the best deals for your loan needs.</p>
+        </div>
+        <div class="wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="display-5 mt-5">Eligibility Criteria</h1>
+            <ul class="list-unstyled list-group-flush">
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i><strong>Company:</strong> A company should be minimum 1 yr old.</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i><strong>Business activity:</strong> There should be a business activity set-up and stock.</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i><strong>Company:</strong> There should be an active company current account with Min 15k ABB (Average bank balance).</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i><strong>Credit bureau score:</strong> Existing credit history is preferred, though not mandatory.</li>
+            </ul>
+        </div>
+        <div class="wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="display-5 mt-5">Mandatory Requirements</h1>
+            <h2>Individual Document</h2>
+            <ul class="list-unstyled list-group-flush">
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>Pan Card, Passport size photo & Adhar card of Applicant and Co-Applicant</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>Latest current residence address proof in name of Applicant or family members with relation proof</li>
+            </ul>
+            <h2>Company Document</h2>
+            <ul class="list-unstyled list-group-flush">
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>Pan card for Partnership, LLP firm, PVT Ltd & LTD company only</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>MOA & AOA for PVT Ltd & LTD company only</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>Register partnership deed for Partnership firm and LLP firm only</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>Business legal proof (Gst Registration Certificate, Udhayam aadhar Certificate and Shop & Establishment)</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>Business vintage proof</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>Last two years Complete set of financial Existing Secured and unsecured any loan sanction letters</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>Last one-year Business primary Current or saving account</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Feature End -->
+{% endblock %}

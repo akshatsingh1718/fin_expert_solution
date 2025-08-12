@@ -1,0 +1,53 @@
+{% extends 'finance/base.html' %}
+{% load static %}
+{% block title %}Salaried Personal Loan{% endblock %}
+
+{% block page_header %}
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container">
+        <h1 class="display-3 mb-4 animated slideInDown">Salaried Personal Loan</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'finance:index' %}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'finance:service' %}">Services</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Salaried Personal Loan</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+{% endblock %}
+
+{% block content %}
+<!-- Feature Start -->
+<div class="container-xxl">
+    <div class="container">
+        <div class="wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="display-5">Overview</h1>
+            <p>It is an unsecured loan taken by an individual Customer from a bank or a non-banking financial company (NBFC) on the basis of his salary and company list to meet their personal needs and requirements. The {{ COMPANY_NAME }} is one of the leading channel partners with Banks and NBFC and can help you avail salaried personal loans We help you procure the best deals for your salaried personal loan needs.</p>
+        </div>
+        <div class="wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="display-5 mt-5">Eligibility Criteria</h1>
+            <ul class="list-unstyled list-group-flush">
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i><strong>Salary:</strong> 17k & above</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i><strong>Age:</strong> 21 to 60 years</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i><strong>Length of service/Job:</strong> 3 months or confirmed.</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i><strong>Company:</strong> Only listed companies with Banks and Nbfcs.</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i><strong>Credit bureau score:</strong> Existing credit history is preferred, though not mandatory.</li>
+            </ul>
+        </div>
+        <div class="wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="display-5 mt-5">Mandatory Requirements</h1>
+            <ul class="list-unstyled list-group-flush">
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>Pan Card, Passport size photo & Adhar card</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>Latest current residence address proof in name of Applicant or family members with relation proof</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>Last three-month salary Slip and Salary certificate (If current job less than 3 months previous company appointment letter and relieving letter</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>Latest three months’ salary credit bank statement</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>Existing Secured and unsecured any loan sanction letters</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Feature End -->
+{% endblock %}

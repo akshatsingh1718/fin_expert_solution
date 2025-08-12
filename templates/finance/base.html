@@ -69,15 +69,21 @@
                 <div class="navbar-nav ms-auto py-0">
                     <a href="{% url 'finance:index' %}" class="nav-item nav-link {% block nav_home %}{% endblock %}">Home</a>
                     <a href="{% url 'finance:about' %}" class="nav-item nav-link {% block nav_about %}{% endblock %}">About</a>
-                    <a href="{% url 'finance:service' %}" class="nav-item nav-link {% block nav_service %}{% endblock %}">Services</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle {% block nav_pages %}{% endblock %}" data-bs-toggle="dropdown">Pages</a>
+                        <a href="#" class="nav-link dropdown-toggle {% block nav_pages %}{% endblock %}" data-bs-toggle="dropdown">Services</a>
                         <div class="dropdown-menu m-0">
-                            <a href="{% url 'finance:feature' %}" class="dropdown-item {% block nav_feature %}{% endblock %}">Features</a>
-                            <a href="{% url 'finance:team' %}" class="dropdown-item {% block nav_team %}{% endblock %}">Our Team</a>
-                            <a href="{% url 'finance:testimonial' %}" class="dropdown-item {% block nav_testimonial %}{% endblock %}">Testimonial</a>
-                            <a href="{% url 'finance:project' %}" class="dropdown-item {% block nav_project %}{% endblock %}">Projects</a>
-                            <a href="#" class="dropdown-item">404 Page</a>
+                            <a href="{% url 'finance:service_detail' 'salaried-personal-loan' %}" class="dropdown-item">Salaried Personal Loan</a>
+                            <a href="{% url 'finance:service_detail' 'self-employed-business-loan' %}" class="dropdown-item">Self Employed Business Loan</a>
+                            <!-- <a href="professional-loan" class="dropdown-item">Professional Loan</a> -->
+                            <a href="{% url 'finance:service_detail' 'home-loan' %}" class="dropdown-item">Home Loan</a>
+                            <a href="{% url 'finance:service_detail' 'loan-against-property' %}" class="dropdown-item">Loan Against Property</a>
+                            <a href="{% url 'finance:service_detail' 'debt-consolidation' %}" class="dropdown-item">Debt Consolidation</a><!-- Added by vijaya -->
+                            <h6 class="dropdown-header">Car Loan</h6>
+                            <a href="{% url 'finance:service_detail' 'used-car-loan' %}" class="dropdown-item ps-4">Used Car Loan</a>
+                            <a href="{% url 'finance:service_detail' 'car-refinancing' %}" class="dropdown-item ps-4">Car Refinancing</a>
+                            <a href="{% url 'finance:service_detail' 'overdraft-facility' %}" class="dropdown-item">Overdraft Facility</a>
+                            <!-- <a href="credit-card" class="dropdown-item">Credit Card</a> -->
+                            <!-- <a href="why-financemandi" class="dropdown-item">Why Finance Mandi</a> -->
                         </div>
                     </div>
                     <a href="{% url 'finance:contact' %}" class="nav-item nav-link {% block nav_contact %}{% endblock %}">Contact</a>
