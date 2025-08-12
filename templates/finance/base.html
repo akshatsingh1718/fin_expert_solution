@@ -133,15 +133,23 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Services</h4>
-                    {% for service in MAIN_SERVICES %}
-                        <a class="btn btn-link" href="{% url 'finance:service' %}">{{ service }}</a>
-                    {% endfor %}
+                    <a class="btn btn-link" href="{% url 'finance:service_detail' 'car-refinancing' %}">Car Refinancing</a>
+                    <a class="btn btn-link" href="{% url 'finance:service_detail' 'home-loan' %}">Home Loan</a>
+                    <a class="btn btn-link" href="{% url 'finance:service_detail' 'overdraft-facility' %}">Overdraft Facility</a>
+                    <a class="btn btn-link" href="{% url 'finance:service_detail' 'self-employed-business-loan' %}">Self Employed Business Loan</a>
+                    <a class="btn btn-link" href="{% url 'finance:service_detail' 'debt-consolidation' %}">Debt Consolidation</a>
+                    <a class="btn btn-link" href="{% url 'finance:service_detail' 'loan-against-property' %}">Loan Against Property</a>
+                    <a class="btn btn-link" href="{% url 'finance:service_detail' 'salaried-personal-loan' %}">Salaried Personal Loan</a>
+                    <a class="btn btn-link" href="{% url 'finance:service_detail' 'used-car-loan' %}">Used Car Loan</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Quick Links</h4>
-                    {% for link in QUICK_LINKS %}
-                        <a class="btn btn-link" href="{% if link.url != '#' %}{% url link.url %}{% else %}#{% endif %}">{{ link.name }}</a>
-                    {% endfor %}
+                    <a class="btn btn-link" href="{% url 'finance:about' %}">About Us</a>
+                    <a class="btn btn-link" href="{% url 'finance:contact' %}">Contact Us</a>
+                    <a class="btn btn-link" href="{% url 'finance:service' %}">Our Services</a>
+                    <a class="btn btn-link" href="#">Terms & Condition</a>
+                    <a class="btn btn-link" href="#">Support</a>
+
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Newsletter</h4>

@@ -30,23 +30,4 @@ def site_settings(request):
         'SITE_URL': 'https://finxpertsolution.com',
         'COPYRIGHT_YEAR': '2024',
         'COPYRIGHT_TEXT': 'All Rights Reserved',
-        
-        # Services List
-        'MAIN_SERVICES': [
-            'Financial Planning',
-            'Cash Investment', 
-            'Financial Consultancy',
-            'Business Loans',
-            'Business Analysis',
-            'Marketing Research'
-        ],
-        
-        # Quick Links
-        'QUICK_LINKS': [
-            {'name': 'About Us', 'url': 'finance:about'},
-            {'name': 'Contact Us', 'url': 'finance:contact'},
-            {'name': 'Our Services', 'url': 'finance:service'},
-            {'name': 'Terms & Condition', 'url': '#'},
-            {'name': 'Support', 'url': '#'},
-        ]
     }
