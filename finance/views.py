@@ -1,7 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import Http404
 import os
 from django.conf import settings
+from django.contrib import messages
+from finance.utils.email import EmailSender, send_email_to_admin
+email_sender = EmailSender()
 
 def index(request):
     """Home page view"""
@@ -12,7 +15,22 @@ def about(request):
     return render(request, 'finance/about.html')
 
 def contact(request):
-    """Contact page view"""
+    """Contact page view with form handling"""
+    if request.method == 'POST':
+        # Get form data
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message_content = request.POST.get('message')
+        
+        # Send email using EmailSender class
+        try:
+            email_sender.send_email_to_admin(name, email, subject, message_content)
+            messages.success(request, "Your message has been sent successfully. We'll get back to you soon!")
+            return redirect('finance:contact')
+        except Exception as e:
+            messages.error(request, f"Failed to send message. Please try again later")
+    
     return render(request, 'finance/contact.html')
 
 def feature(request):

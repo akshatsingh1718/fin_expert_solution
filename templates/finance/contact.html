@@ -1,6 +1,6 @@
 {% extends 'finance/base.html' %}
 
-{% block title %}Contact Us - Finanza{% endblock %}
+{% block title %}Contact Us{% endblock %}
 
 {% block nav_contact %}active{% endblock %}
 
@@ -43,7 +43,7 @@
                     <i class="fas fa-phone-alt fa-2x text-primary me-4"></i>
                     <div>
                         <h4>Call Us</h4>
-                        <p class="mb-0">{{ COMPANY_PHONE }}</p>
+                        <p class="mb-0"><a href="tel:{{ COMPANY_PHONE }}" class="text-primary">+91 {{ COMPANY_PHONE }}</a></p>
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
                     <i class="fas fa-envelope fa-2x text-primary me-4"></i>
                     <div>
                         <h4>Mail Us</h4>
-                        <p class="mb-0">{{ COMPANY_EMAIL }}</p>
+                        <p class="mb-0"><a href="mailto:{{ COMPANY_EMAIL }}" class="text-primary">{{ COMPANY_EMAIL }}</a></p>
                     </div>
                 </div>
             </div>
@@ -72,30 +72,31 @@
                     tabindex="0"></iframe>
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                <form>
+                <form method="POST" action="{% url 'finance:contact' %}" id="contactForm">
+                    {% csrf_token %}
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
                                 <label for="name">Your Name</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
                                 <label for="email">Your Email</label>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
                                 <label for="subject">Subject</label>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a message here" id="message"
-                                    style="height: 150px"></textarea>
+                                <textarea class="form-control" placeholder="Leave a message here" id="message" name="message"
+                                    style="height: 150px" required></textarea>
                                 <label for="message">Message</label>
                             </div>
                         </div>
@@ -109,4 +110,66 @@
     </div>
 </div>
 <!-- Contact End -->
+
+<!-- Toast Container -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+                <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="5000">
+                    <div class="toast-header bg-success text-white">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <strong class="me-auto">Success</strong>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        {{ message }}
+                    </div>
+                </div>
+            {% elif message.tags == 'error' %}
+                <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="5000">
+                    <div class="toast-header bg-danger text-white">
+                        <i class="fas fa-exclamation-circle me-2"></i>
+                        <strong class="me-auto">Error</strong>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        {{ message }}
+                    </div>
+                </div>
+            {% else %}
+                <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="5000">
+                    <div class="toast-header bg-info text-white">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <strong class="me-auto">Information</strong>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        {{ message }}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</div>
+
+<!-- Toast JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+        var toastList = toastElList.map(function(toastEl) {
+            return new bootstrap.Toast(toastEl, {
+                autohide: true,
+                delay: 5000
+            });
+        });
+        
+        // Auto-hide toasts after 5 seconds
+        setTimeout(function() {
+            toastList.forEach(function(toast) {
+                toast.hide();
+            });
+        }, 5000);
+    });
+</script>
 {% endblock %}

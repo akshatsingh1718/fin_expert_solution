@@ -1,6 +1,6 @@
 {% extends 'finance/base.html' %}
-
-{% block title %}Testimonials - Finanza{% endblock %}
+{% load static %}
+{% block title %}Testimonials{% endblock %}
 
 {% block page_header %}
 <!-- Page Header Start -->
@@ -15,7 +15,7 @@
             </ol>
         </nav>
     </div>
-</div>
+</div>  
 <!-- Page Header End -->
 {% endblock %}
 
@@ -27,47 +27,21 @@
             <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Testimonial</p>
             <h1 class="display-5 mb-5">What Our Clients Say!</h1>
         </div>
+
         <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+        {% for testimonial in TESTIMONIALS %}
+
             <div class="testimonial-item bg-light rounded p-4">
                 <div class="d-flex align-items-center mb-4">
-                    <img class="flex-shrink-0 rounded-circle border p-1" src="{% static 'img/testimonial-1.jpg' %}" alt="">
+                    <img class="flex-shrink-0 rounded-circle border p-1" src="{% static testimonial.image_url %}" alt="">
                     <div class="ms-4">
-                        <h5 class="mb-1">Client Name</h5>
-                        <span>Profession</span>
+                        <h5 class="mb-1">{{ testimonial.name }}</h5>
+                        <span>{{ testimonial.profession }}</span>
                     </div>
                 </div>
-                <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                <p class="mb-0">{{ testimonial.text }}</p>
             </div>
-            <div class="testimonial-item bg-light rounded p-4">
-                <div class="d-flex align-items-center mb-4">
-                    <img class="flex-shrink-0 rounded-circle border p-1" src="{% static 'img/testimonial-2.jpg' %}" alt="">
-                    <div class="ms-4">
-                        <h5 class="mb-1">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-                <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-            </div>
-            <div class="testimonial-item bg-light rounded p-4">
-                <div class="d-flex align-items-center mb-4">
-                    <img class="flex-shrink-0 rounded-circle border p-1" src="{% static 'img/testimonial-3.jpg' %}" alt="">
-                    <div class="ms-4">
-                        <h5 class="mb-1">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-                <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-            </div>
-            <div class="testimonial-item bg-light rounded p-4">
-                <div class="d-flex align-items-center mb-4">
-                    <img class="flex-shrink-0 rounded-circle border p-1" src="{% static 'img/testimonial-4.jpg' %}" alt="">
-                    <div class="ms-4">
-                        <h5 class="mb-1">Client Name</h5>
-                        <span>Profession</span>
-                    </div>
-                </div>
-                <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>

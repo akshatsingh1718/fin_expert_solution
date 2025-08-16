@@ -1,0 +1,103 @@
+{% load static %}
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-4 align-items-end mb-4">
+            <div class="col-lg-6 wow fadeInUp my-auto" data-wow-delay="0.1s">
+                <img class="img-fluid rounded" src="{% static 'img/aboutus.jpg' %}">
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">About Us</p>
+                <h1 class="display-5 mb-4">We Help Our Clients To Grow Their Business</h1>
+                <p class="mb-4">At {{COMPANY_NAME}}, we believe finance should be simple, transparent, and empowering. With years of experience in financial planning, investments, and consultancy, we help individuals and businesses make smarter choices that drive growth and stability. Our client-first approach ensures tailored solutions designed to meet unique goals, turning financial challenges into opportunities for success.
+                </p>
+                <div class="border rounded p-4">
+                    <nav>
+                        <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+                            <button class="nav-link fw-semi-bold active" id="nav-story-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-story" type="button" role="tab" aria-controls="nav-story"
+                                aria-selected="true">Story</button>
+                            <button class="nav-link fw-semi-bold" id="nav-mission-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-mission" type="button" role="tab" aria-controls="nav-mission"
+                                aria-selected="false">Mission</button>
+                            <button class="nav-link fw-semi-bold" id="nav-vision-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-vision" type="button" role="tab" aria-controls="nav-vision"
+                                aria-selected="false">Vision</button>
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-story" role="tabpanel"
+                            aria-labelledby="nav-story-tab">
+                            <p>{{COMPANY_NAME}} was founded with a passion for helping individuals and businesses make smarter financial decisions. Over the years, we’ve grown into a trusted partner, delivering tailored solutions that simplify finance and drive success.
+
+                            </p>
+                        </div>
+                        <div class="tab-pane fade" id="nav-mission" role="tabpanel"
+                            aria-labelledby="nav-mission-tab">
+                            <p>Our mission is to empower clients with clear, practical, and reliable financial guidance. We aim to simplify complexities, maximize growth opportunities, and create long-term financial security for every client we serve.
+
+                            </p>
+                        </div>
+                        <div class="tab-pane fade" id="nav-vision" role="tabpanel" aria-labelledby="nav-vision-tab">
+                            <p>We envision becoming a leading financial solutions provider, known for innovation, trust, and excellence. Our goal is to shape a future where every client achieves financial freedom and sustainable growth.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="border rounded p-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="row g-4">
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="h-100">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                                <i class="fa fa-times text-white"></i>
+                            </div>
+                            <div class="ps-3">
+                                <h4>No Hidden Cost</h4>
+                                <span>We provide clear and transparent financial solutions with zero hidden charges, so you always know exactly what you’re paying for.
+
+                                </span>
+                            </div>
+                            <div class="border-end d-none d-lg-block"></div>
+                        </div>
+                        <div class="border-bottom mt-4 d-block d-lg-none"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="h-100">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                                <i class="fa fa-users text-white"></i>
+                            </div>
+                            <div class="ps-3">
+                                <h4>Dedicated Team</h4>
+                                <span>Our experienced financial experts work closely with you to understand your needs and deliver personalized solutions that drive results.
+
+                                </span>
+                            </div>
+                            <div class="border-end d-none d-lg-block"></div>
+                        </div>
+                        <div class="border-bottom mt-4 d-block d-lg-none"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="h-100">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                                <i class="fa fa-phone text-white"></i>
+                            </div>
+                            <div class="ps-3">
+                                <h4>24/7 Available</h4>
+                                <span>We’re always here when you need us, offering round-the-clock support to ensure your financial concerns are addressed on time.
+
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

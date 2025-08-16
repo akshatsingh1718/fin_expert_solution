@@ -1,7 +1,7 @@
 {% extends 'finance/base.html' %}
 {% load static %}
 
-{% block title %}About Us - Finanza{% endblock %}
+{% block title %}About Us{% endblock %}
 
 {% block nav_about %}active{% endblock %}
 
@@ -13,7 +13,6 @@
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item"><a href="{% url 'finance:index' %}">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Pages</a></li>
                 <li class="breadcrumb-item active" aria-current="page">About</li>
             </ol>
         </nav>
@@ -23,192 +22,149 @@
 {% endblock %}
 
 {% block content %}
-<!-- About Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="row g-4 align-items-end mb-4">
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                <img class="img-fluid rounded" src="{% static 'img/about.jpg' %}">
+
+<!-- About Us Content Start -->
+<div class="container py-5">
+    <div class="row g-5">
+        <div class="col-12">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h1 class="fw-bold text-primary text-uppercase">About Us</h1>
+                <h5 class="mb-0">We are a team of banking experts offering a wide range of financial products and services</h5>
             </div>
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">About Us</p>
-                <h1 class="display-5 mb-4">We Help Our Clients To Grow Their Business</h1>
-                <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
-                    eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
-                </p>
-                <div class="border rounded p-4">
-                    <nav>
-                        <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
-                            <button class="nav-link fw-semi-bold active" id="nav-story-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-story" type="button" role="tab" aria-controls="nav-story"
-                                aria-selected="true">Story</button>
-                            <button class="nav-link fw-semi-bold" id="nav-mission-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-mission" type="button" role="tab" aria-controls="nav-mission"
-                                aria-selected="false">Mission</button>
-                            <button class="nav-link fw-semi-bold" id="nav-vision-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-vision" type="button" role="tab" aria-controls="nav-vision"
-                                aria-selected="false">Vision</button>
-                        </div>
-                    </nav>
-                    <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="nav-story" role="tabpanel"
-                            aria-labelledby="nav-story-tab">
-                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
-                                amet diam et eos labore.</p>
-                            <p class="mb-0">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore.
-                                Clita erat ipsum et lorem et sit</p>
-                        </div>
-                        <div class="tab-pane fade" id="nav-mission" role="tabpanel"
-                            aria-labelledby="nav-mission-tab">
-                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
-                                amet diam et eos labore.</p>
-                            <p class="mb-0">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore.
-                                Clita erat ipsum et lorem et sit</p>
-                        </div>
-                        <div class="tab-pane fade" id="nav-vision" role="tabpanel" aria-labelledby="nav-vision-tab">
-                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
-                                amet diam et eos labore.</p>
-                            <p class="mb-0">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore.
-                                Clita erat ipsum et lorem et sit</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="border rounded p-4 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="row g-4">
-                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="h-100">
-                        <div class="d-flex">
-                            <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
-                                <i class="fa fa-times text-white"></i>
-                            </div>
-                            <div class="ps-3">
-                                <h4>No Hidden Cost</h4>
-                                <span>Clita erat ipsum lorem sit sed stet duo justo</span>
-                            </div>
-                            <div class="border-end d-none d-lg-block"></div>
-                        </div>
-                        <div class="border-bottom mt-4 d-block d-lg-none"></div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
-                    <div class="h-100">
-                        <div class="d-flex">
-                            <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
-                                <i class="fa fa-users text-white"></i>
-                            </div>
-                            <div class="ps-3">
-                                <h4>Dedicated Team</h4>
-                                <span>Clita erat ipsum lorem sit sed stet duo justo</span>
-                            </div>
-                            <div class="border-end d-none d-lg-block"></div>
-                        </div>
-                        <div class="border-bottom mt-4 d-block d-lg-none"></div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="h-100">
-                        <div class="d-flex">
-                            <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
-                                <i class="fa fa-phone text-white"></i>
-                            </div>
-                            <div class="ps-3">
-                                <h4>24/7 Support</h4>
-                                <span>Clita erat ipsum lorem sit sed stet duo justo</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="wow fadeInUp" data-wow-delay="0.1s">
+                <p class="mb-4">Our goal is to safeguard all aspects of your financial interests through expert support and tailored solutions.
+                We work closely with associates from regional banks across India to serve you better. In today's AECB-regulated environment, 
+                taking expert advice before making any financial decision is more important than ever.</p>
             </div>
         </div>
     </div>
 </div>
-<!-- About End -->
+<!-- About Us Content End -->
 
-<!-- Facts Start -->
-<div class="container-fluid facts my-5 py-5" data-parallax="scroll" data-image-src="{% static 'img/bg.png' %}">
+<!-- Why Choose Us Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" style="background-color: #f8f9fa;">
     <div class="container py-5">
+        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+            <h1 class="fw-bold text-primary text-uppercase">Why Choose Us?</h1>
+        </div>
         <div class="row g-5">
-            <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
-                <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                <span class="fs-5 fw-semi-bold text-light">Happy Clients</span>
-            </div>
-            <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
-                <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                <span class="fs-5 fw-semi-bold text-light">Garden Complated</span>
-            </div>
-            <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
-                <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                <span class="fs-5 fw-semi-bold text-light">Dedicated Workers</span>
-            </div>
-            <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
-                <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                <span class="fs-5 fw-semi-bold text-light">Awards Achieved</span>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Facts End -->
-
-<!-- Team Start -->
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Our Team</p>
-            <h1 class="display-5 mb-5">Exclusive Team</h1>
-        </div>
-        <div class="row g-4">
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="team-item">
-                    <img class="img-fluid rounded" src="{% static 'img/team-1.jpg' %}" alt="">
-                    <div class="team-text">
-                        <h4 class="mb-0">Kate Winslet</h4>
-                        <div class="team-social d-flex">
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i
-                                    class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i
-                                    class="fab fa-linkedin-in"></i></a>
-                        </div>
+                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center h-100 p-4">
+                    <div class="d-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style="width: 75px; height: 75px;">
+                        <i class="fa fa-check fa-2x text-white"></i>
                     </div>
+                    <h4 class="mb-3">Expert Team</h4>
+                    <p class="m-0">Our team is made up of experienced financial experts.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="team-item">
-                    <img class="img-fluid rounded" src="{% static 'img/team-2.jpg' %}" alt="">
-                    <div class="team-text">
-                        <h4 class="mb-0">Jac Jacson</h4>
-                        <div class="team-social d-flex">
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i
-                                    class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i
-                                    class="fab fa-linkedin-in"></i></a>
-                        </div>
+                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center h-100 p-4">
+                    <div class="d-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style="width: 75px; height: 75px;">
+                        <i class="fa fa-check fa-2x text-white"></i>
                     </div>
+                    <h4 class="mb-3">Trusted Approach</h4>
+                    <p class="m-0">We are trusted by clients for our reliable and transparent approach.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="team-item">
-                    <img class="img-fluid rounded" src="{% static 'img/team-3.jpg' %}" alt="">
-                    <div class="team-text">
-                        <h4 class="mb-0">Doris Jordan</h4>
-                        <div class="team-social d-flex">
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i
-                                    class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-light rounded-circle mx-1" href=""><i
-                                    class="fab fa-linkedin-in"></i></a>
-                        </div>
+                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center h-100 p-4">
+                    <div class="d-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style="width: 75px; height: 75px;">
+                        <i class="fa fa-check fa-2x text-white"></i>
                     </div>
+                    <h4 class="mb-3">Customized Solutions</h4>
+                    <p class="m-0">We help fulfill your financial needs with customized solutions.</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Team End -->
+<!-- Why Choose Us End -->
+
+<!-- Who We Are Start -->
+<div class="container py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="row g-5">
+        <div class="col-12">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h1 class="fw-bold text-primary text-uppercase">Who We Are – Fin Expert Solution</h1>
+            </div>
+            <div class="wow fadeInUp" data-wow-delay="0.1s">
+                <p class="mb-4">We are a dedicated financial consultancy committed to helping clients with all their financial needs. 
+                True to our tagline, "Apka Trusted Finance Dost," we focus on building long-term, trustworthy relationships with every client.</p>
+                <hr class="my-5">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Who We Are End -->
+
+<!-- What Makes Us Different Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" style="background-color: #f8f9fa;">
+    <div class="container py-5">
+        <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+            <h1 class="fw-bold text-primary text-uppercase">What Makes Us Different</h1>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center h-100 p-4">
+                    <div class="d-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style="width: 75px; height: 75px;">
+                        <i class="fa fa-user-tie fa-2x text-white"></i>
+                    </div>
+                    <h4 class="mb-3">Client-Centric Approach</h4>
+                    <p class="m-0">We understand your unique financial needs and provide solutions that align with your goals — without affecting your CIBIL score. 
+                    In fact, we actively guide you on how to improve and maintain a healthy CIBIL score.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center h-100 p-4">
+                    <div class="d-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style="width: 75px; height: 75px;">
+                        <i class="fa fa-hands-helping fa-2x text-white"></i>
+                    </div>
+                    <h4 class="mb-3">Expert Guidance</h4>
+                    <p class="m-0">Our experienced backend team brings deep financial expertise. We assess your requirements based on the end-use of funds 
+                    and assist in preparing well-documented, accurate applications for fast and smooth approvals.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center h-100 p-4">
+                    <div class="d-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style="width: 75px; height: 75px;">
+                        <i class="fa fa-chart-line fa-2x text-white"></i>
+                    </div>
+                    <h4 class="mb-3">Customized Financial Solutions</h4>
+                    <p class="m-0">We offer competitive commercial rates in the market, along with tailor-made solutions that help turn your vision into reality — 
+                    whether it's a personal loan, business expansion, or investment.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- What Makes Us Different End -->
+
+<!-- Trusted Banks Start -->
+<div class="container py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="row g-5">
+        <div class="col-12">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h1 class="fw-bold text-primary text-uppercase">Trusted Banks & NBFC's</h1>
+            </div>
+            <div class="wow fadeInUp text-center" data-wow-delay="0.1s">
+                <p class="mb-4">We offer a wide range of financial products and services, supported by expert bankers from over 30 leading banks across India. 
+                Our goal is to serve you in the best possible way.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Trusted Banks End -->
+
+    <!-- About Start -->
+    {% include 'finance/components/aboutus-comp.html' %}
+    <!-- About End -->
+
+    <!-- facts Start -->
+    {% include 'finance/components/facts-comp.html' %}
+    <!-- facts End -->
+
+    <!-- Team Start -->
+    {% include 'finance/components/team-cards.html' %}
+    <!-- Team End -->
+
 {% endblock %}
