@@ -56,14 +56,6 @@
     </div>
     <!-- Carousel End -->
 
-    <!-- About Start -->
-    {% include 'finance/components/aboutus-comp.html' %}
-    <!-- About End -->
-
-    <!-- facts Start -->
-    {% include 'finance/components/facts-comp.html' %}
-    <!-- facts End -->
-
     <!-- Features Start -->
     {% include 'finance/components/why-choose-comp.html' %}
     <!-- Features End -->
@@ -71,6 +63,18 @@
     <!-- Service Start -->
     {% include 'finance/components/services-comp.html' %}
     <!-- Service End -->
+
+    <!-- About Start -->
+    {% include 'finance/components/aboutus-comp.html' %}
+    <!-- About End -->
+
+    <!-- EMI Calculator Start -->
+    {% include 'finance/components/emi-calculator.html' %}
+    <!-- EMI Calculator End -->
+
+    <!-- facts Start -->
+    {% include 'finance/components/facts-comp.html' %}
+    <!-- facts End -->
 
     <!-- Callback Start -->
     {% include 'finance/components/contactus-form.html' %}
@@ -81,11 +85,11 @@
     <!-- Projects End -->
 
     <!-- Team Start -->
-    {% include 'finance/components/team-cards.html' %}
+    {% comment %} {% include 'finance/components/team-cards.html' %} {% endcomment %}
     <!-- Team End -->
 
     <!-- Testimonial Start -->
-    {% include 'finance/components/testimonials-card.html' %}
+    {% comment %} {% include 'finance/components/testimonials-card.html' %} {% endcomment %}
     <!-- Testimonial End -->
 
 {% endblock %}

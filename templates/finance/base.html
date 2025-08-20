@@ -74,14 +74,12 @@
 
     <!-- Navbar Start -->
     <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
-        <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
-            <div class="col-lg-8 px-5 text-start">
-                <small><i class="fa fa-map-marker-alt text-primary me-2"></i>{{ COMPANY_ADDRESS }}</small>
-                <small class="ms-4"><i class="fa fa-clock text-primary me-2"></i>{{ COMPANY_HOURS }}</small>
-            </div>
-            <div class="col-lg-4 px-5 text-end">
-                <small><a href="mailto:{{ COMPANY_EMAIL }}" class="text-primary"><i class="fa fa-envelope me-2"></i>{{ COMPANY_EMAIL }}</a></small>
-                <small class="ms-4"><a href="tel:{{ COMPANY_PHONE }}" class="text-primary"><i class="fa fa-phone-alt me-2"></i>91 {{ COMPANY_PHONE }}</a></small>
+        <div class="top-bar row gx-0 align-items-center d-none d-lg-flex justify-content-end">
+            <div class="col-lg-8 px-5 d-flex align-items-center justify-content-end">
+                <div class="d-flex">
+                    <small class="me-4"><a href="mailto:{{ COMPANY_EMAIL }}" class="text-primary"><i class="fa fa-envelope me-2"></i>{{ COMPANY_EMAIL }}</a></small>
+                    <small><a href="tel:{{ COMPANY_PHONE }}" class="text-primary"><i class="fa fa-phone-alt me-2"></i>91 {{ COMPANY_PHONE }}</a></small>
+                </div>
             </div>
         </div>
 
@@ -175,8 +173,6 @@
                     <a class="btn btn-link" href="{% url 'finance:about' %}">About Us</a>
                     <a class="btn btn-link" href="{% url 'finance:contact' %}">Contact Us</a>
                     <a class="btn btn-link" href="{% url 'finance:service' %}">Our Services</a>
-                    <a class="btn btn-link" href="#">Terms & Condition</a>
-                    <a class="btn btn-link" href="#">Support</a>
 
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -203,8 +199,7 @@
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <!--/*** This template is free as long as you keep the footer author's credit link/attribution link/backlink. If you'd like to use the template without the footer author's credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a class="border-bottom" href="#">Akshat Singh</a> Distributed By <a
-                    href="#">Third Eye Technologies</a>
+                    Designed By <a href="#" class="border-bottom">Third Eye Technologies</a>
                 </div>
             </div>
         </div>

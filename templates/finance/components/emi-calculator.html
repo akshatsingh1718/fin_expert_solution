@@ -1,0 +1,217 @@
+<!-- EMI Calculator Start -->
+<div class="container-xxl py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+    <div class="container">
+        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="display-5 mb-2">Calculate Loan EMI</h1>
+            <p class="text-muted mb-5">Plan your finances with our easy-to-use EMI calculator</p>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-7 wow fadeIn" data-wow-delay="0.1s">
+                <div class="h-100 p-4 shadow-sm rounded" style="background: white;">
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <label for="loanAmount" class="form-label fw-bold mb-0">
+                                <i class="fa fa-money-bill text-primary me-2"></i>Loan Amount
+                            </label>
+                            <span class="badge bg-primary rounded-pill px-3 py-2">₹ <span id="loanAmountValue">100000</span></span>
+                        </div>
+                        <input type="range" class="form-range custom-range" id="loanAmount" min="10000" max="10000000" step="10000" value="100000">
+                        <div class="d-flex justify-content-between">
+                            <span class="small text-muted">₹10,000</span>
+                            <span class="small text-muted">₹1,00,00,000</span>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <label for="loanMonths" class="form-label fw-bold mb-0">
+                                <i class="fa fa-calendar text-primary me-2"></i>Loan Term
+                            </label>
+                            <span class="badge bg-primary rounded-pill px-3 py-2"><span id="loanMonthsValue">48</span> Months</span>
+                        </div>
+                        <input type="range" class="form-range custom-range" id="loanMonths" min="12" max="300" step="12" value="48">
+                        <div class="d-flex justify-content-between">
+                            <span class="small text-muted">1 Year</span>
+                            <span class="small text-muted">25 Years</span>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <label for="interestRate" class="form-label fw-bold mb-0">
+                                <i class="fa fa-percent text-primary me-2"></i>Interest Rate
+                            </label>
+                            <span class="badge bg-primary rounded-pill px-3 py-2"><span id="interestRateValue">5.99</span> %</span>
+                        </div>
+                        <input type="range" class="form-range custom-range" id="interestRate" min="1" max="20" step="0.01" value="5.99">
+                        <div class="d-flex justify-content-between">
+                            <span class="small text-muted">1%</span>
+                            <span class="small text-muted">20%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 wow fadeIn" data-wow-delay="0.5s">
+                <div class="h-100 d-flex flex-column justify-content-center p-5 rounded shadow" 
+                     style="background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);">
+                    <div class="text-center mb-4">
+                        <h3 class="text-white mb-2">Monthly EMI</h3>
+                        <div class="d-flex justify-content-center align-items-baseline">
+                            <span class="text-white h5 me-1">₹</span>
+                            <span id="emiAmount" class="display-4 text-white fw-bold">2,348.04</span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-3 rounded mb-4" style="background-color: rgba(255, 255, 255, 0.2);">
+                        <h5 class="text-white">Total Interest Payable</h5>
+                        <div class="d-flex align-items-baseline">
+                            <span class="text-white h5 me-1">₹</span>
+                            <h4 class="text-white mb-0"><span id="totalInterest">12,706.13</span></h4>
+                        </div>
+                    </div>
+                    
+                    <div class="p-3 rounded mb-4" style="background-color: rgba(255, 255, 255, 0.2);">
+                        <h5 class="text-white">Total Payment</h5>
+                        <p class="text-white mb-1 small">(Principal + Interest)</p>
+                        <div class="d-flex align-items-baseline">
+                            <span class="text-white h5 me-1">₹</span>
+                            <h4 class="text-white mb-0"><span id="totalPayment">112,706.13</span></h4>
+                        </div>
+                    </div>
+                    
+                    <a href="{% url 'finance:contact' %}" class="btn btn-light py-3 px-5 animated slideInDown" id="applyNowBtn">
+                        <i class="fa fa-check-circle me-2"></i>APPLY NOW
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- EMI Calculator End -->
+
+<style>
+/* Custom styling for the EMI calculator */
+.custom-range {
+    height: 8px;
+    border-radius: 5px;
+}
+
+.custom-range::-webkit-slider-thumb {
+    background: #0d6efd;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -6px;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+    transition: all 0.2s ease;
+}
+
+.custom-range::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 0 5px rgba(13, 110, 253, 0.4);
+}
+
+.custom-range::-webkit-slider-runnable-track {
+    background: #dee2e6;
+    height: 8px;
+    border-radius: 5px;
+}
+
+.custom-range:focus {
+    outline: none;
+}
+
+.custom-range:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 5px rgba(13, 110, 253, 0.4);
+}
+
+/* Badge animation */
+.badge {
+    transition: all 0.3s ease;
+}
+
+/* Apply Now button hover effect */
+#applyNowBtn {
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+#applyNowBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all the elements
+    const loanAmountSlider = document.getElementById('loanAmount');
+    const loanAmountValue = document.getElementById('loanAmountValue');
+    const loanMonthsSlider = document.getElementById('loanMonths');
+    const loanMonthsValue = document.getElementById('loanMonthsValue');
+    const interestRateSlider = document.getElementById('interestRate');
+    const interestRateValue = document.getElementById('interestRateValue');
+    const emiAmount = document.getElementById('emiAmount');
+    const totalInterest = document.getElementById('totalInterest');
+    const totalPayment = document.getElementById('totalPayment');
+    
+    // Function to format currency
+    function formatCurrency(amount) {
+        return new Intl.NumberFormat('en-IN', {
+            maximumFractionDigits: 2,
+            minimumFractionDigits: 2
+        }).format(amount);
+    }
+    
+    // Function to calculate EMI
+    function calculateEMI() {
+        const principal = parseFloat(loanAmountSlider.value);
+        const months = parseInt(loanMonthsSlider.value);
+        const ratePerMonth = parseFloat(interestRateSlider.value) / (12 * 100);
+        
+        // EMI formula: [P x R x (1+R)^N]/[(1+R)^N-1]
+        const emi = principal * ratePerMonth * Math.pow(1 + ratePerMonth, months) / (Math.pow(1 + ratePerMonth, months) - 1);
+        const totalInterestPayable = (emi * months) - principal;
+        const totalPaymentAmount = principal + totalInterestPayable;
+        
+        // Update the values with animation
+        animateValue(emiAmount, parseFloat(emiAmount.textContent.replace(/,/g, '')), emi, 500);
+        animateValue(totalInterest, parseFloat(totalInterest.textContent.replace(/,/g, '')), totalInterestPayable, 500);
+        animateValue(totalPayment, parseFloat(totalPayment.textContent.replace(/,/g, '')), totalPaymentAmount, 500);
+    }
+    
+    // Function to animate value changes
+    function animateValue(element, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const current = progress * (end - start) + start;
+            element.textContent = formatCurrency(current);
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+    
+    // Event listeners for sliders
+    loanAmountSlider.addEventListener('input', function() {
+        loanAmountValue.textContent = formatCurrency(this.value);
+        calculateEMI();
+    });
+    
+    loanMonthsSlider.addEventListener('input', function() {
+        loanMonthsValue.textContent = this.value;
+        calculateEMI();
+    });
+    
+    interestRateSlider.addEventListener('input', function() {
+        interestRateValue.textContent = this.value;
+        calculateEMI();
+    });
+    
+    // Initial calculation
+    calculateEMI();
+});
+</script>
