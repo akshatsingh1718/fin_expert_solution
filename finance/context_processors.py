@@ -2,15 +2,30 @@
 Context processors for the finance app.
 This file contains functions that add variables to the template context globally.
 """
+import os
+from django.conf import settings
 
 def site_settings(request):
     """
     Add site-wide settings to template context.
     These variables will be available in all templates.
     """
+    # Get all bank logos from the static/img/banks directory
+    bank_logos = []
+    banks_dir = os.path.join(settings.BASE_DIR, 'static', 'img', 'banks')
+    if os.path.exists(banks_dir):
+        for file in os.listdir(banks_dir):
+            if file.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')):
+                # Get the bank name from the filename (without extension)
+                bank_name = os.path.splitext(file)[0].replace('_', ' ').replace('-', ' ').title()
+                bank_logos.append({
+                    'name': bank_name,
+                    'image_path': f'img/banks/{file}'
+                })
+    
     return {
         # Company Information
-        'COMPANY_NAME': 'Fin Expert Solution',
+        'COMPANY_NAME': 'FinXpert Solution LLP',
         'COMPANY_TAGLINE': 'Financial Services Website Template',
         'COMPANY_DESCRIPTION': 'Your trusted partner for comprehensive financial services and solutions.',
         
@@ -50,5 +65,7 @@ def site_settings(request):
                 "text": "The consultancy services from Fin Expert Solutions are top-notch. They simplified complex financial terms and gave us practical solutions that actually worked. Highly recommend their expertise.",
                 "image_url": "img/testimonial/lakshay.png"
             }
-        ]
+        ],
+        # Bank Logos
+        'BANK_LOGOS': bank_logos
     }

@@ -1,0 +1,57 @@
+{% extends 'finance/base.html' %}
+{% load static %}
+{% block title %}Construction Finance{% endblock %}
+
+{% block page_header %}
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container">
+        <h1 class="display-3 mb-4 animated slideInDown">Construction Finance</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'finance:index' %}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'finance:service' %}">Services</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Construction Finance</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+{% endblock %}
+
+{% block content %}
+<!-- Feature Start -->
+<div class="container-xxl">
+    <div class="container">
+        <div class="wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="display-5">Overview</h1>
+            <p>Construction finance refers to the financial resources and services provided to individuals, businesses, and entities engaged in construction activities. This includes loans, grants, and other financial instruments to support the development and completion of construction projects. {{ COMPANY_NAME }} being a leading channel partner with Banks and NBFCs, can help you secure the best construction finance deals tailored to your financial needs.</p>
+        </div>
+        <div class="wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="display-5 mt-5">Eligibility Criteria</h1>
+            <ul class="list-unstyled list-group-flush">
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>You must be at least 18 years old to apply for construction finance.</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>The car should not be older than 10 years, though this may vary based on the lender.</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>You need to have a stable income to qualify, whether salaried or self-employed.</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>A good credit score enhances the chances of approval, but it's not always mandatory.</li>
+            </ul>
+        </div>
+        <div class="wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="display-5 mt-5">Mandatory Requirements</h1>
+            <p>Salaried and Self-Employed Basic documents Individual and company document as per applicable lists</p>
+            <ul class="list-unstyled list-group-flush">
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>PAN Card, Passport, Voter ID, or Aadhaar Card.</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>Recent utility bill (electricity, water, gas) or rent agreement.</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>Registration Certificate (RC) of the car.</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>Salary slips for the last 3 months and bank statements for the last 6 months.</li>
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>Business income proof, bank statements for the last 12 months, and tax returns.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Feature End -->
+
+<!-- Include FAQ Component -->
+{% include 'finance/components/faq.html' %}
+
+{% endblock %}

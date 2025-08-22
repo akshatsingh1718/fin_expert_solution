@@ -21,6 +21,8 @@
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    {% comment %} <link href="{% static 'css/all.min.css' %}" rel="stylesheet"> {% endcomment %}
+    {% comment %} <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet"> {% endcomment %}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
@@ -59,6 +61,14 @@
         .whatsapp-icon {
             font-size: 30px;
         }
+
+        /* Logo styling */
+        .navbar-logo {
+            height: 50px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+        }
     </style>
 
     {% block extra_css %}{% endblock %}
@@ -80,12 +90,12 @@
                     <small class="me-4"><a href="mailto:{{ COMPANY_EMAIL }}" class="text-primary"><i class="fa fa-envelope me-2"></i>{{ COMPANY_EMAIL }}</a></small>
                     <small><a href="tel:{{ COMPANY_PHONE }}" class="text-primary"><i class="fa fa-phone-alt me-2"></i>91 {{ COMPANY_PHONE }}</a></small>
                 </div>
-            </div>
+            </div>  
         </div>
 
         <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
             <a href="{% url 'finance:index' %}" class="navbar-brand ms-4 ms-lg-0">
-                <h1 class="display-5 text-primary m-0">{{ COMPANY_NAME }}</h1>
+                <img src="{% static 'img/logo.jpeg' %}" alt="{{ COMPANY_NAME }}" class="navbar-logo">
             </a>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
@@ -98,18 +108,15 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle {% block nav_pages %}{% endblock %}" data-bs-toggle="dropdown">Services</a>
                         <div class="dropdown-menu m-0">
-                            <a href="{% url 'finance:service_detail' 'salaried-personal-loan' %}" class="dropdown-item">Salaried Personal Loan</a>
-                            <a href="{% url 'finance:service_detail' 'self-employed-business-loan' %}" class="dropdown-item">Self Employed Business Loan</a>
-                            <!-- <a href="professional-loan" class="dropdown-item">Professional Loan</a> -->
+                            <a href="{% url 'finance:service_detail' 'business-loan' %}" class="dropdown-item">Business Loan</a>
+                            <a href="{% url 'finance:service_detail' 'loan-against-property' %}" class="dropdown-item">Loan Against Property (LAP)</a>
+                            <a href="{% url 'finance:service_detail' 'working-capital' %}" class="dropdown-item">Working Capital (Overdraft/ Cash Credit)</a>
+                            <a href="{% url 'finance:service_detail' 'personal-loan' %}" class="dropdown-item">Personal Loan</a>
                             <a href="{% url 'finance:service_detail' 'home-loan' %}" class="dropdown-item">Home Loan</a>
-                            <a href="{% url 'finance:service_detail' 'loan-against-property' %}" class="dropdown-item">Loan Against Property</a>
-                            <a href="{% url 'finance:service_detail' 'debt-consolidation' %}" class="dropdown-item">Debt Consolidation</a><!-- Added by vijaya -->
-                            <h6 class="dropdown-header">Car Loan</h6>
-                            <a href="{% url 'finance:service_detail' 'used-car-loan' %}" class="dropdown-item ps-4">Used Car Loan</a>
-                            <a href="{% url 'finance:service_detail' 'car-refinancing' %}" class="dropdown-item ps-4">Car Refinancing</a>
-                            <a href="{% url 'finance:service_detail' 'overdraft-facility' %}" class="dropdown-item">Overdraft Facility</a>
-                            <!-- <a href="credit-card" class="dropdown-item">Credit Card</a> -->
-                            <!-- <a href="why-financemandi" class="dropdown-item">Why Finance Mandi</a> -->
+                            <a href="{% url 'finance:service_detail' 'car-loan' %}" class="dropdown-item">Car Loan</a>
+                            <a href="{% url 'finance:service_detail' 'construction-finance' %}" class="dropdown-item">Construction Finance (Builder Finance)</a>
+                            <a href="{% url 'finance:service_detail' 'machinery-loan' %}" class="dropdown-item">Machinery Loans</a>
+                            <a href="{% url 'finance:service_detail' 'insurance' %}" class="dropdown-item">Insurance</a>
                         </div>
                     </div>
                     <a href="{% url 'finance:contact' %}" class="nav-item nav-link {% block nav_contact %}{% endblock %}">Contact</a>
@@ -216,8 +223,11 @@
     </a>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    {% comment %} <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> {% endcomment %}
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    {% comment %} <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script> {% endcomment %}
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+   
     <script src="{% static 'lib/wow/wow.min.js' %}"></script>
     <script src="{% static 'lib/easing/easing.min.js' %}"></script>
     <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>

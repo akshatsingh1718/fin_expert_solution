@@ -1,0 +1,51 @@
+{% extends 'finance/base.html' %}
+{% load static %}
+{% block title %}Working Capital{% endblock %}
+
+{% block page_header %}
+<!-- Page Header Start -->
+<div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container">
+        <h1 class="display-3 mb-4 animated slideInDown">Working Capital</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'finance:index' %}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'finance:service' %}">Services</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Working Capital</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+{% endblock %}
+
+{% block content %}
+<!-- Feature Start -->
+<div class="container-xxl">
+    <div class="container">
+        <div class="wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="display-5">Overview</h1>
+            <p>Working capital is a financial product offered by banks and non-banking financial companies (NBFCs), which allows an individual to withdraw more money than their current account balance, up to a pre-approved limit. This facility helps manage cash flow issues and acts as a short-term financing option. Finance Mandi, as a channel partner with banks and NBFCs, assists customers in availing the best deals for overdraft facilities.
+
+            </p>
+        </div>
+        <div class="wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="display-5 mt-5">Eligibility Criteria</h1>
+            <ul class="list-unstyled list-group-flush">
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>Other Criteria:Applicant should have a stable income and no ongoing bankruptcy proceedings</li>
+            </ul>
+        </div>
+        <div class="wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="display-5 mt-5">Mandatory Requirements</h1>
+            <ul class="list-unstyled list-group-flush">
+                <li class="list-group-item d-flex align-items-center"><i class="fa fa-circle text-primary me-2"></i>Employer’s contact details for verification of employment status and salary</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Feature End -->
+
+<!-- Include FAQ Component -->
+{% include 'finance/components/faq.html' %}
+
+{% endblock %}

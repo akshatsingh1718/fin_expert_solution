@@ -26,15 +26,20 @@
 <!-- About Us Content Start -->
 <div class="container py-5">
     <div class="row g-5">
-        <div class="col-12">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                <h1 class="fw-bold text-primary text-uppercase">About Us</h1>
-                <h5 class="mb-0">We are a team of banking experts offering a wide range of financial products and services</h5>
+        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="position-relative overflow-hidden h-100" style="min-height: 400px;">
+                <img class="position-absolute w-100 h-100" src="{% static 'img/about.jpg' %}" alt="About FinXpert" style="object-fit: cover;">
             </div>
-            <div class="wow fadeInUp" data-wow-delay="0.1s">
-                <p class="mb-4">Our goal is to safeguard all aspects of your financial interests through expert support and tailored solutions.
-                We work closely with associates from regional banks across India to serve you better. In today's AECB-regulated environment, 
-                taking expert advice before making any financial decision is more important than ever.</p>
+        </div>
+        <div class="col-lg-6">
+            <div class="section-title position-relative pb-3 mb-4">
+                <h1 class="fw-bold text-primary text-uppercase">About {{COMPANY_NAME}}</h1>
+            </div>
+            <div class="wow fadeInUp" data-wow-delay="0.3s">
+                <p class="mb-4">{{COMPANY_NAME}} is a dynamic team of seasoned financial professionals, headquartered in Mumbai and Pune. Established in 2024, we specialize in offering tailored financial consultancy services, with a strong focus on providing low EMIs and competitive interest rates to meet the diverse needs of both individuals and businesses.</p>
+                <p class="mb-4">Our primary objective is to support residential and commercial borrowing needs — especially for high-net-worth individuals and growing enterprises. We are committed to resolving real financial challenges for individuals, entrepreneurs, and MSMEs by providing reliable and responsible lending solutions.</p>
+                <p class="mb-4">At {{COMPANY_NAME}}, we invite you to explore safe, scheduled, and strategically structured business loans aimed at promoting sustainable growth.</p>
+                <p class="mb-4">At {{COMPANY_NAME}}, we believe that no dream should remain unfulfilled due to a lack of funds. Backed by the trust of our customers, we are on a journey to become one of India's leading retail finance providers.</p>
             </div>
         </div>
     </div>
@@ -42,7 +47,7 @@
 <!-- About Us Content End -->
 
 <!-- Why Choose Us Start -->
-<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" style="background-color: #f8f9fa;">
+{% comment %} <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" style="background-color: #f8f9fa;">
     <div class="container py-5">
         <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
             <h1 class="fw-bold text-primary text-uppercase">Why Choose Us?</h1>
@@ -77,11 +82,11 @@
             </div>
         </div>
     </div>
-</div>
+</div> {% endcomment %}
 <!-- Why Choose Us End -->
 
 <!-- Who We Are Start -->
-<div class="container py-5 wow fadeInUp" data-wow-delay="0.1s">
+{% comment %} <div class="container py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="row g-5">
         <div class="col-12">
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
@@ -94,7 +99,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> {% endcomment %}
 <!-- Who We Are End -->
 
 <!-- What Makes Us Different Start -->
@@ -139,24 +144,12 @@
 </div>
 <!-- What Makes Us Different End -->
 
-<!-- Trusted Banks Start -->
-<div class="container py-5 wow fadeInUp" data-wow-delay="0.1s">
-    <div class="row g-5">
-        <div class="col-12">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                <h1 class="fw-bold text-primary text-uppercase">Trusted Banks & NBFC's</h1>
-            </div>
-            <div class="wow fadeInUp text-center" data-wow-delay="0.1s">
-                <p class="mb-4">We offer a wide range of financial products and services, supported by expert bankers from over 30 leading banks across India. 
-                Our goal is to serve you in the best possible way.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Trusted Banks End -->
+    <!-- Trusted Banks Start -->
+    {% include 'finance/components/trusted-banks.html' %}
+    <!-- Trusted Banks End -->
 
     <!-- About Start -->
-    {% include 'finance/components/aboutus-comp.html' %}
+    {% comment %} {% include 'finance/components/aboutus-comp.html' %} {% endcomment %}
     <!-- About End -->
 
     <!-- facts Start -->

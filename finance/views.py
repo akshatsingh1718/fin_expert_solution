@@ -57,14 +57,15 @@ def service_detail(request, service_name):
     """Dynamic view to handle all service pages"""
     # Define valid service names that correspond to HTML files
     valid_services = [
-        'salaried-personal-loan',
-        'self-employed-business-loan', 
+        'business-loan',
+        'construction-finance',
+        'insurance',
+        'machinery-loan',
+        'working-capital',
+        'car-loan',
         'home-loan',
         'loan-against-property',
-        'debt-consolidation',
-        'used-car-loan',
-        'car-refinancing',
-        'overdraft-facility'
+        'personal-loan',
     ]
     
     # Check if the requested service is valid
