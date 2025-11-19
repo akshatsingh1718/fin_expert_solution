@@ -25,7 +25,7 @@ def site_settings(request):
     
     return {
         # Company Information
-        'COMPANY_NAME': 'FinXpert Solution LLP',
+        'COMPANY_NAME': 'PS FinXpert Solution LLP',
         'COMPANY_TAGLINE': 'Financial Services Website Template',
         'COMPANY_DESCRIPTION': 'Your trusted partner for comprehensive financial services and solutions.',
         
